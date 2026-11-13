@@ -1,0 +1,52 @@
+@model CrudClientes.Models.Cliente
+
+@{
+    ViewData["Title"] = "Detalles del cliente";
+}
+
+<h1>Detalles del cliente</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Nombre)</dt>
+        <dd class="col-sm-9">@Model.Nombre</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Apellido)</dt>
+        <dd class="col-sm-9">@Model.Apellido</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Cedula)</dt>
+        <dd class="col-sm-9">@Model.Cedula</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Email)</dt>
+        <dd class="col-sm-9">@Model.Email</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Telefono)</dt>
+        <dd class="col-sm-9">@Model.Telefono</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Direccion)</dt>
+        <dd class="col-sm-9">@Model.Direccion</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Ciudad)</dt>
+        <dd class="col-sm-9">@Model.Ciudad</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Pais)</dt>
+        <dd class="col-sm-9">@Model.Pais</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(m => m.FechaNacimiento)</dt>
+        <dd class="col-sm-9">@Model.FechaNacimiento?.ToString("dd/MM/yyyy")</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(m => m.FechaRegistro)</dt>
+        <dd class="col-sm-9">@Model.FechaRegistro.ToString("dd/MM/yyyy HH:mm")</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Activo)</dt>
+        <dd class="col-sm-9">@(Model.Activo ? "Sí" : "No")</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Observaciones)</dt>
+        <dd class="col-sm-9">@Model.Observaciones</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver</a>
+</div>
